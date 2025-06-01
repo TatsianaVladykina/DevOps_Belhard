@@ -1,0 +1,112 @@
+Microsoft Windows [Version 10.0.19045.5854]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Tatsiana>ssh-keygen -t ed25519  -f D:\DevOps_Belhard\id_ed25519
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in D:\DevOps_Belhard\id_ed25519
+Your public key has been saved in D:\DevOps_Belhard\id_ed25519.pub
+The key fingerprint is:
+SHA256:DBmNu4QeK3Fmon0NdZs1Gg92FiC/SwT5V7XVyvBY810 tatsiana@DESKTOP-P55DJJ5
+The key's randomart image is:
++--[ED25519 256]--+
+|      ++.... .. o|
+|      +** = o ooE|
+|     oo=o@ o *.+o|
+|  o B o+=.o . + o|
+| o B * .S.       |
+|. o + o. .       |
+|   o    .        |
+|                 |
+|                 |
++----[SHA256]-----+
+
+C:\Users\Tatsiana>ssh-add D:\DevOps_Belhard\id_ed25519
+Identity added: D:\DevOps_Belhard\id_ed25519 (tatsiana@DESKTOP-P55DJJ5)
+
+C:\Users\Tatsiana>ssh -T git@github.com
+git@github.com: Permission denied (publickey).
+
+C:\Users\Tatsiana>ssh-add D:\DevOps_Belhard\id_ed25519
+Identity added: D:\DevOps_Belhard\id_ed25519 (tatsiana@DESKTOP-P55DJJ5)
+
+C:\Users\Tatsiana>ssh -T git@github.com
+Hi TatsianaVladykina! You've successfully authenticated, but GitHub does not provide shell access.
+
+C:\Users\Tatsiana>git clone git@github.com:TatsianaVladykina/DevOps_Belhard.git
+Cloning into 'DevOps_Belhard'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\Tatsiana>ssh-add -l
+256 SHA256:DBmNu4QeK3Fmon0NdZs1Gg92FiC/SwT5V7XVyvBY810 tatsiana@DESKTOP-P55DJJ5 (ED25519)
+
+C:\Users\Tatsiana>ssh -T git@github.com
+Hi TatsianaVladykina! You've successfully authenticated, but GitHub does not provide shell access.
+
+C:\Users\Tatsiana>git clone git@github.com:TatsianaVladykina/DevOps_Belhard.git
+Cloning into 'DevOps_Belhard'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\Tatsiana>git clone git@github.com:TatsianaVladykina/DevOps_Belhard.git
+Cloning into 'DevOps_Belhard'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\Tatsiana>git clone https://github.com/TatsianaVladykina/DevOps_Belhard.git
+Cloning into 'DevOps_Belhard'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+C:\Users\Tatsiana>ssh-add D:\DevOps_Belhard\id_ed25519
+Identity added: D:\DevOps_Belhard\id_ed25519 (tatsiana@DESKTOP-P55DJJ5)
+
+C:\Users\Tatsiana>ssh -T git@github.com
+Hi TatsianaVladykina! You've successfully authenticated, but GitHub does not provide shell access.
+
+C:\Users\Tatsiana>
+C:\Users\Tatsiana>git clone git@github.com:TatsianaVladykina/DevOps_Belhard.git
+fatal: destination path 'DevOps_Belhard' already exists and is not an empty directory.
+
+C:\Users\Tatsiana>ssh-add D:\DevOps_Belhard\id_ed25519
+Identity added: D:\DevOps_Belhard\id_ed25519 (tatsiana@DESKTOP-P55DJJ5)
+
+C:\Users\Tatsiana>ssh -T git@github.com
+Hi TatsianaVladykina! You've successfully authenticated, but GitHub does not provide shell access.
+
+C:\Users\Tatsiana>git clone git@github.com:TatsianaVladykina/DevOps_Belhard.git D:\DevOps_Belhard
+fatal: destination path 'D:\DevOps_Belhard' already exists and is not an empty directory.
+
+C:\Users\Tatsiana>git clone git@github.com:TatsianaVladykina/DevOps_Belhard.git D:\DevOps_Belhard\git
+Cloning into 'D:\DevOps_Belhard\git'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+
+C:\Users\Tatsiana>set url=ssh://git@github.com/TatsianaVladykina/DevOps_Belhard.git
+
+C:\Users\Tatsiana>git clone %url% "D:\DevOps_Belhard\git"
+Cloning into 'D:\DevOps_Belhard\git'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\Tatsiana>
